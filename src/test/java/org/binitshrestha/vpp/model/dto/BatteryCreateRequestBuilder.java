@@ -1,7 +1,5 @@
 package org.binitshrestha.vpp.model.dto;
 
-import org.binitshrestha.vpp.model.BatteryCreateRequest;
-
 public class BatteryCreateRequestBuilder {
     private String name = "Duracell";
     private String postcode = "44600";

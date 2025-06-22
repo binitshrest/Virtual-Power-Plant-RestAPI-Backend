@@ -1,4 +1,4 @@
-package org.binitshrestha.vpp.model;
+package org.binitshrestha.vpp.model.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package org.binitshrestha.vpp.model;
+package org.binitshrestha.vpp.model.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;

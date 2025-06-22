@@ -1,6 +1,6 @@
 package org.binitshrestha.vpp.repository;
 
-import org.binitshrestha.vpp.model.Battery;
+import org.binitshrestha.vpp.model.entity.Battery;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

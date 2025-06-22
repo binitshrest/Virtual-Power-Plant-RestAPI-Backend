@@ -1,4 +1,4 @@
-package org.binitshrestha.vpp.model;
+package org.binitshrestha.vpp.model.entity;
 
 public class BatteryBuilder {
     private Long id = 1L;

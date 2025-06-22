@@ -1,4 +1,4 @@
-package org.binitshrestha.vpp.model;
+package org.binitshrestha.vpp.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.NotBlank;
