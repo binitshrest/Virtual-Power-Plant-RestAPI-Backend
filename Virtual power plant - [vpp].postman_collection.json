@@ -1,0 +1,1289 @@
+{
+	"info": {
+		"_postman_id": "f76d4ecf-d548-4cb7-84e6-002cf3838c40",
+		"name": "Virtual power plant - [vpp]",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40284254"
+	},
+	"item": [
+		{
+			"name": "api/v1/batteries",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "Get battery by ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/batteries/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"batteries",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) Battery ID"
+										}
+									]
+								},
+								"description": "Retrieve a specific battery by its ID"
+							},
+							"response": [
+								{
+									"name": "Battery found and returned",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/batteries/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"batteries",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Battery ID"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"postcode\": \"<string>\",\n  \"wattCapacity\": \"<double>\",\n  \"status\": \"<string>\"\n}"
+								},
+								{
+									"name": "Battery not found",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/batteries/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"batteries",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Battery ID"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"postcode\": \"<string>\",\n  \"wattCapacity\": \"<double>\",\n  \"status\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update battery status",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/batteries/:id/status?status=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"batteries",
+										":id",
+										"status"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "<string>",
+											"description": "(Required) New battery status"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) Battery ID"
+										}
+									]
+								},
+								"description": "Update the operational status of a battery"
+							},
+							"response": [
+								{
+									"name": "Battery status successfully updated",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/batteries/:id/status?status=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"batteries",
+												":id",
+												"status"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Battery ID"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"postcode\": \"<string>\",\n  \"wattCapacity\": \"<double>\",\n  \"status\": \"<string>\"\n}"
+								},
+								{
+									"name": "Invalid status provided",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/batteries/:id/status?status=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"batteries",
+												":id",
+												"status"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Battery ID"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"postcode\": \"<string>\",\n  \"wattCapacity\": \"<double>\",\n  \"status\": \"<string>\"\n}"
+								},
+								{
+									"name": "Battery not found",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/batteries/:id/status?status=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"batteries",
+												":id",
+												"status"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": "<string>"
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) Battery ID"
+												}
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"postcode\": \"<string>\",\n  \"wattCapacity\": \"<double>\",\n  \"status\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get all batteries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/batteries",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"batteries"
+							]
+						},
+						"description": "Retrieve all registered batteries sorted by name"
+					},
+					"response": [
+						{
+							"name": "Successfully retrieved all batteries",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/batteries",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"batteries"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"postcode\": \"<string>\",\n    \"wattCapacity\": \"<double>\",\n    \"status\": \"<string>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"postcode\": \"<string>\",\n    \"wattCapacity\": \"<double>\",\n    \"status\": \"<string>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Register a new battery",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"capacity\": \"<double>\",\n  \"name\": \"<string>\",\n  \"postcode\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/batteries",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"batteries"
+							]
+						},
+						"description": "Register a single battery in the virtual power plant"
+					},
+					"response": [
+						{
+							"name": "Battery successfully registered",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"capacity\": \"<double>\",\n  \"name\": \"<string>\",\n  \"postcode\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/batteries",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"batteries"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"postcode\": \"<string>\",\n  \"wattCapacity\": \"<double>\",\n  \"status\": \"<string>\"\n}"
+						},
+						{
+							"name": "Invalid battery data provided",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"capacity\": \"<double>\",\n  \"name\": \"<string>\",\n  \"postcode\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/batteries",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"batteries"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"postcode\": \"<string>\",\n  \"wattCapacity\": \"<double>\",\n  \"status\": \"<string>\"\n}"
+						},
+						{
+							"name": "Battery with the same name already exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"capacity\": \"<double>\",\n  \"name\": \"<string>\",\n  \"postcode\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/batteries",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"batteries"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"postcode\": \"<string>\",\n  \"wattCapacity\": \"<double>\",\n  \"status\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Register multiple batteries",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"batteries\": [\n    {\n      \"capacity\": \"<double>\",\n      \"name\": \"<string>\",\n      \"postcode\": \"<string>\"\n    },\n    {\n      \"capacity\": \"<double>\",\n      \"name\": \"<string>\",\n      \"postcode\": \"<string>\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/batteries/batch",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"batteries",
+								"batch"
+							]
+						},
+						"description": "Register multiple batteries concurrently in batch"
+					},
+					"response": [
+						{
+							"name": "Batteries successfully registered",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"batteries\": [\n    {\n      \"capacity\": \"<double>\",\n      \"name\": \"<string>\",\n      \"postcode\": \"<string>\"\n    },\n    {\n      \"capacity\": \"<double>\",\n      \"name\": \"<string>\",\n      \"postcode\": \"<string>\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/batteries/batch",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"batteries",
+										"batch"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"postcode\": \"<string>\",\n    \"wattCapacity\": \"<double>\",\n    \"status\": \"<string>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"postcode\": \"<string>\",\n    \"wattCapacity\": \"<double>\",\n    \"status\": \"<string>\"\n  }\n]"
+						},
+						{
+							"name": "Invalid battery data provided",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"batteries\": [\n    {\n      \"capacity\": \"<double>\",\n      \"name\": \"<string>\",\n      \"postcode\": \"<string>\"\n    },\n    {\n      \"capacity\": \"<double>\",\n      \"name\": \"<string>\",\n      \"postcode\": \"<string>\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/batteries/batch",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"batteries",
+										"batch"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"postcode\": \"<string>\",\n    \"wattCapacity\": \"<double>\",\n    \"status\": \"<string>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"postcode\": \"<string>\",\n    \"wattCapacity\": \"<double>\",\n    \"status\": \"<string>\"\n  }\n]"
+						},
+						{
+							"name": "One or more batteries already exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"batteries\": [\n    {\n      \"capacity\": \"<double>\",\n      \"name\": \"<string>\",\n      \"postcode\": \"<string>\"\n    },\n    {\n      \"capacity\": \"<double>\",\n      \"name\": \"<string>\",\n      \"postcode\": \"<string>\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/batteries/batch",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"batteries",
+										"batch"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"postcode\": \"<string>\",\n    \"wattCapacity\": \"<double>\",\n    \"status\": \"<string>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"postcode\": \"<string>\",\n    \"wattCapacity\": \"<double>\",\n    \"status\": \"<string>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get statistics by postcode",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/batteries/statistics/by-postcode",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"batteries",
+								"statistics",
+								"by-postcode"
+							]
+						},
+						"description": "Retrieve aggregated battery statistics grouped by postcode"
+					},
+					"response": [
+						{
+							"name": "Successfully retrieved postcode statistics",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/batteries/statistics/by-postcode",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"batteries",
+										"statistics",
+										"by-postcode"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"postcode\": \"<string>\",\n    \"batteryCount\": \"<integer>\",\n    \"totalCapacity\": \"<double>\",\n    \"averageCapacity\": \"<double>\"\n  },\n  {\n    \"postcode\": \"<string>\",\n    \"batteryCount\": \"<integer>\",\n    \"totalCapacity\": \"<double>\",\n    \"averageCapacity\": \"<double>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Search batteries by name",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/batteries/search?namePattern=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"batteries",
+								"search"
+							],
+							"query": [
+								{
+									"key": "namePattern",
+									"value": "<string>",
+									"description": "(Required) Name pattern to search for"
+								}
+							]
+						},
+						"description": "Search batteries by name pattern (case-insensitive)"
+					},
+					"response": [
+						{
+							"name": "Successfully retrieved matching batteries",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/batteries/search?namePattern=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"batteries",
+										"search"
+									],
+									"query": [
+										{
+											"key": "namePattern",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"postcode\": \"<string>\",\n    \"wattCapacity\": \"<double>\",\n    \"status\": \"<string>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"postcode\": \"<string>\",\n    \"wattCapacity\": \"<double>\",\n    \"status\": \"<string>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get unique postcodes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/batteries/postcodes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"batteries",
+								"postcodes"
+							]
+						},
+						"description": "Retrieve all unique postcodes from registered batteries"
+					},
+					"response": [
+						{
+							"name": "Successfully retrieved unique postcodes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/batteries/postcodes",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"batteries",
+										"postcodes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  \"<string>\",\n  \"<string>\"\n]"
+						}
+					]
+				},
+				{
+					"name": "Get batteries in postcode range",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/batteries/postcode-range?startPostcode=<string>&endPostcode=<string>&minWattCapacity=<double>&maxWattCapacity=<double>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"batteries",
+								"postcode-range"
+							],
+							"query": [
+								{
+									"key": "startPostcode",
+									"value": "<string>",
+									"description": "(Required) Start postcode (inclusive)"
+								},
+								{
+									"key": "endPostcode",
+									"value": "<string>",
+									"description": "(Required) End postcode (inclusive)"
+								},
+								{
+									"key": "minWattCapacity",
+									"value": "<double>",
+									"description": "Minimum watt capacity filter (optional)"
+								},
+								{
+									"key": "maxWattCapacity",
+									"value": "<double>",
+									"description": "Maximum watt capacity filter (optional)"
+								}
+							]
+						},
+						"description": "Retrieve batteries within a postcode range with optional capacity filters and statistics"
+					},
+					"response": [
+						{
+							"name": "Successfully retrieved batteries in range",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/batteries/postcode-range?startPostcode=<string>&endPostcode=<string>&minWattCapacity=<double>&maxWattCapacity=<double>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"batteries",
+										"postcode-range"
+									],
+									"query": [
+										{
+											"key": "startPostcode",
+											"value": "<string>"
+										},
+										{
+											"key": "endPostcode",
+											"value": "<string>"
+										},
+										{
+											"key": "minWattCapacity",
+											"value": "<double>"
+										},
+										{
+											"key": "maxWattCapacity",
+											"value": "<double>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"batteryNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"statistics\": {\n    \"totalBatteries\": \"<integer>\",\n    \"totalWattCapacity\": \"<double>\",\n    \"averageWattCapacity\": \"<double>\",\n    \"minWattCapacity\": \"<double>\",\n    \"maxWattCapacity\": \"<double>\"\n  }\n}"
+						},
+						{
+							"name": "Invalid postcode range or capacity filters",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/batteries/postcode-range?startPostcode=<string>&endPostcode=<string>&minWattCapacity=<double>&maxWattCapacity=<double>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"batteries",
+										"postcode-range"
+									],
+									"query": [
+										{
+											"key": "startPostcode",
+											"value": "<string>"
+										},
+										{
+											"key": "endPostcode",
+											"value": "<string>"
+										},
+										{
+											"key": "minWattCapacity",
+											"value": "<double>"
+										},
+										{
+											"key": "maxWattCapacity",
+											"value": "<double>"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"batteryNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"statistics\": {\n    \"totalBatteries\": \"<integer>\",\n    \"totalWattCapacity\": \"<double>\",\n    \"averageWattCapacity\": \"<double>\",\n    \"minWattCapacity\": \"<double>\",\n    \"maxWattCapacity\": \"<double>\"\n  }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get high capacity batteries",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/batteries/high-capacity?minCapacity=<double>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"batteries",
+								"high-capacity"
+							],
+							"query": [
+								{
+									"key": "minCapacity",
+									"value": "<double>",
+									"description": "(Required) Minimum capacity threshold"
+								}
+							]
+						},
+						"description": "Retrieve batteries with capacity greater than or equal to specified minimum"
+					},
+					"response": [
+						{
+							"name": "Successfully retrieved high capacity batteries",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/batteries/high-capacity?minCapacity=<double>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"batteries",
+										"high-capacity"
+									],
+									"query": [
+										{
+											"key": "minCapacity",
+											"value": "<double>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"postcode\": \"<string>\",\n    \"wattCapacity\": \"<double>\",\n    \"status\": \"<string>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\",\n    \"postcode\": \"<string>\",\n    \"wattCapacity\": \"<double>\",\n    \"status\": \"<string>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "Health check",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/batteries/health",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"batteries",
+								"health"
+							]
+						},
+						"description": "Check if the battery service is operational"
+					},
+					"response": [
+						{
+							"name": "Service is healthy",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/batteries/health",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"batteries",
+										"health"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"<string>\",\n  \"message\": \"<string>\",\n  \"totalBatteries\": \"<integer>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get total battery count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/batteries/count",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"batteries",
+								"count"
+							]
+						},
+						"description": "Get the total number of registered batteries"
+					},
+					"response": [
+						{
+							"name": "Successfully retrieved battery count",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/batteries/count",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"batteries",
+										"count"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"totalCount\": \"<integer>\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
