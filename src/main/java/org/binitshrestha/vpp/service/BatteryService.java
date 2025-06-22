@@ -237,18 +237,21 @@ public class BatteryService {
             return new PostcodeRangeResponse.BatteryStatistics(0, 0.0, 0.0, 0.0, 0.0);
         }
 
-        Long count = (Long) stats[0];
-        Double totalCapacity = (Double) stats[1];
-        Double avgCapacity = (Double) stats[2];
-        Double minCapacity = (Double) stats[3];
-        Double maxCapacity = (Double) stats[4];
+        Object[] statsArray = (Object[]) stats[0];
+        Long count = ((Number) statsArray[0]).longValue();
+        Double totalCapacity = ((Number) statsArray[1]).doubleValue();
+        Double avgCapacity = ((Number) statsArray[2]).doubleValue();
+        Double minCapacity = ((Number) statsArray[3]).doubleValue();
+        Double maxCapacity = ((Number) statsArray[4]).doubleValue();
+
+        log.info("print stats ->", count, totalCapacity, avgCapacity,minCapacity);
 
         return new PostcodeRangeResponse.BatteryStatistics(
                 count.intValue(),
-                totalCapacity != null ? totalCapacity : 0.0,
-                avgCapacity != null ? avgCapacity : 0.0,
-                minCapacity != null ? minCapacity : 0.0,
-                maxCapacity != null ? maxCapacity : 0.0
+                totalCapacity,
+                avgCapacity,
+                minCapacity,
+                maxCapacity
         );
     }
 }
