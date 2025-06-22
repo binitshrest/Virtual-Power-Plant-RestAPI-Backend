@@ -1,0 +1,42 @@
+services:
+  vpp:
+    container_name: virtual-power-plant
+    profiles:
+      - dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_db:5432/vpp_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: password
+    ports:
+      - "8080:8080"
+    networks:
+      - binit
+
+
+  postgres_db:
+    container_name: vpp_postgres
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: vpp_db
+
+    ports:
+      - "5332:5432"
+    restart: unless-stopped
+    volumes:
+      - db:/data/postgres
+    networks:
+      - binit
+
+networks:
+  binit:
+    driver: bridge
+
+volumes:
+  db:
+
+

@@ -5,9 +5,14 @@ spring:
     active: local
 server:
   port: 8080
+  error:
+    include-binding-errors: always
+    include-message: always
 
 springdoc:
   api-docs:
     path: /api-docs
   swagger-ui:
     path: /swagger-ui.html
+
+
