@@ -40,7 +40,7 @@ The **Virtual Power Plant Application** is a Spring Boot-based project designed 
 - Implemented Builder pattern to create Test data for reusability and reduce redundency.
 
 ### 9. **Database Indexing**
-- Implemented Database indexing to find the data faster without scanning the whole table using B-Tree searching.
+- Implemented Database indexing to find the data faster without scanning the whole table and creating a seperate column and data are arranged in sorted order using Binary Searching Algorithm.
 
 ## Upcoming Features
 - Adding Testcontainers and Integration testing to test in Test Environment in Realtime.
