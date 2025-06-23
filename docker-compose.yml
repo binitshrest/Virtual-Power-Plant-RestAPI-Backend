@@ -14,6 +14,8 @@ services:
       - "8080:8080"
     networks:
       - binit
+    depends_on:
+      - postgres_db
 
 
   postgres_db:
@@ -25,7 +27,7 @@ services:
       POSTGRES_DB: vpp_db
 
     ports:
-      - "5332:5432"
+      - "5432:5432"
     restart: unless-stopped
     volumes:
       - db:/data/postgres
